@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link  href="./fancybox/dist/jquery.fancybox.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
+	<script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="./fancybox/dist/jquery.fancybox.min.js"></script>
+	<title>Pixabay Search</title>
+</head>
+<body>
+	<div class="container-fluid main">
+		<header class="jumbotron">
+			<div class="bg-jumb jumb-up"></div>
+			<h1 class="text-center"><b>[Pixabay_image_searcH]</b></h1>
+			<div class="form-inline col-md-8 center">
+				<input class="form-control col-md-10 col-sm-10" type="text" id="search">
+				<button type="button" class="col-md-2 col-sm-2 btn btn-info" onclick="searchClean()">Search</button>
+			</div>
+			<div class="row">
+				<button type="button" class="as center btn btn-info">Advanced Search</button>
+			</div>
+			<div class="advanced-search form-control text-center col-md-8 center">
+				<div class="row">
+					<div class="col-md-3 col-sm-6 image-type">
+						<label>Image Types:</label>
+					    <select class="form-control" id="type">
+					        <option value="all">All</option>
+					        <option value="photo">Photos</option>
+					        <option value="illustration">Illustrations</option>
+					        <option value="vector">Vectors</option>
+					    </select>
+				    </div>
+				    <div class="col-md-3 col-sm-6 orientation">
+						<label>Orientation:</label>
+					    <select class="form-control" id="orient">
+					        <option value="all">All</option>
+					        <option value="horizontal">Horizontal</option>
+					        <option value="vertical">Vertical</option>
+					    </select>
+				    </div>
+				    <div class="col-md-3 col-sm-6 category">
+						<label>Category:</label>
+					    <select class="form-control" id="category">
+					        <option value="all">All</option>
+					        <option value="fashion">Fashion</option>
+					        <option value="backgrounds">Backgrounds</option>
+					        <option value="science">Science</option>
+					        <option value="education">Education</option>
+					        <option value="people">People</option>
+					        <option value="feelings">Feelings</option>
+					        <option value="religion">Religion</option>
+					        <option value="health">Health</option>
+					        <option value="places">Places</option>
+					        <option value="animals">Animals</option>
+					        <option value="industry">Industry</option>
+					        <option value="food">Food</option>
+					        <option value="computer">Computer</option>
+					        <option value="sports">Sports</option>
+					        <option value="transportation">Vehicles</option>
+					        <option value="travel">Travel</option>
+					        <option value="buildings">Buildings</option>
+					        <option value="business">Business</option>
+					        <option value="music">Music</option>
+					    </select>
+				    </div>
+			    	<div class="col-md-3 col-sm-6 per-page">
+						<label>Per page:</label>
+					    <select class="form-control" id="res">
+					        <option value="12">12</option>
+					        <option value="24">24</option>
+					        <option value="48">48</option>
+					        <option value="96">96</option>
+					    </select>
+				    </div>
+			    </div>
+			    <div class="row">
+				    <div class="col-md-3 col-sm-6 order">
+						<label>Order by:</label>
+					    <select class="form-control" id="order">
+					        <option value="popular">Popular</option>
+					        <option value="latest">Latest</option>
+					    </select>
+				    </div>
+				    <nav class="col-md-3 col-sm-6">
+				    	<button type="button" id="searchbutton" class="btn btn-info" onclick="searchClean()">Search</button>
+				    </nav>
+			    </div>
+			</div>
+			
+		</header>
+		<nav class="strane strane-first">
+				<ul class='pagination justify-content-center'>
+					<li class='page-item prev'>
+						<p class='page-link' onclick="prev()">Prev</p>
+					</li>
+					<li class='page-item'>
+						<p id="info" class='page-link track'></p>
+					</li>
+					<li class='page-item next'>
+						<p class='page-link' onclick="next()">Next</p>
+					</li>
+				</ul>
+			</nav>
+		<div class="grid">
+		</div>
+		<nav class="strane">
+			<ul class='pagination justify-content-center'>
+				<li class='page-item prev'>
+					<p class='page-link' onclick="prev()">Prev</p>
+				</li>
+				<li class='page-item'>
+					<p id="info" class='page-link track'></p>
+				</li>
+				<li class='page-item next'>
+					<p class='page-link' onclick="next()">Next</p>
+				</li>
+			</ul>
+		</nav>
+		<div class="container-fluid middle">
+			<div class="row justify-content-between">
+				<div class="col-md-3 firstone">
+					<div class="spacer">
+					</div>
+					<div class="first box">
+						<h5><b>Suggested Categories:</b></h5>
+						<p class="lead">Due to Pixabay request limit to 500 responses please use our advanced search option for more precise results.</p>
+					</div>
+				</div>
+				<div class="slider col-md-9">
+				<figure>
+					<div class="slider-item">
+							<div class="spacer">
+								<h4 class="glow" data-text="[M_u_s_i_C]">[M_u_s_i_C]</h4>
+							</div>
+							<div class="box">
+								<div class="brdr"></div>
+								<div class="one boxinner" data-category-type="music" onclick="categoryPicker(this)">
+								</div>
+							</div>
+						</div>
+					<div class="slider-item">
+							<div class="spacer">
+								<h4 class="glow" data-text="[A_n_i_m_a_l_S]">[A_n_i_m_a_l_S]</h4>
+							</div>
+							<div class="box">
+								<div class="brdr"></div>
+								<div class="two boxinner" data-category-type="animals" onclick="categoryPicker(this)">
+								</div>
+							</div>
+						</div>
+					<div class="slider-item">
+							<div class="spacer">
+								<h4 class="glow" data-text="[P_e_o_p_l_E]">[P_e_o_p_l_E]</h4>
+							</div>
+							<div class="box">
+								<div class="brdr"></div>
+								<div class="three boxinner" data-category-type="people" onclick="categoryPicker(this)">
+								</div>
+							</div>
+						</div>
+					<div class="slider-item">
+							<div class="spacer">
+								<h4 class="glow" data-text="[F_o_o_D]">[F_o_o_D]</h4>
+							</div>
+							<div class="box">
+								<div class="brdr"></div>
+								<div class="four boxinner" data-category-type="food" onclick="categoryPicker(this)">
+								</div>
+							</div>
+						</div>
+						<div class="slider-item">
+							<div class="spacer">
+								<h4 class="glow" data-text="[S_c_i_e_n_c_E]">[S_c_i_e_n_c_E]</h4>
+							</div>
+							<div class="box">
+								<div class="brdr"></div>
+								<div class="five boxinner" data-category-type="science" onclick="categoryPicker(this)">
+								</div>
+							</div>
+						</div>
+						<div class="slider-item">
+							<div class="spacer">
+								<h4 class="glow" data-text="[V_e_h_i_c_l_e_S]">[V_e_h_i_c_l_e_S]</h4>
+							</div>
+							<div class="box">
+								<div class="brdr"></div>
+								<div class="six boxinner" data-category-type="transportation" onclick="categoryPicker(this)">
+								</div>
+							</div>
+						</div>
+				</figure>
+			</div>
+			</div>
+			</div>
+			<div class="row justify-content-between">
+				<div class="col-md-3">
+					<div class="spacer">
+						<a href=""><h4 class="glow gfirst" data-text="[H_o_m_E]">[H_o_m_E]</h4></a>
+					</div>
+				</div>
+				<div class="col-md-6 bottom">
+					<div class="footer">
+						<a href="https://pixabay.com/"><img src="img/pixabay.png" /></a>
+						<a href="https://github.com/batavule112"><i class="fab fa-github-square"></i></a>
+						<a href="https://plus.google.com/discover"><i class="fab fa-google-plus-square"></i></a>
+						<a href="https://www.facebook.com/miodrag.vukovic.33"><i class="fab fa-facebook-square"></i></a>
+						<a href="https://twitter.com/?lang=sr"><i class="fab fa-twitter-square"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
