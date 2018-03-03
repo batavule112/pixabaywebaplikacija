@@ -197,7 +197,6 @@ nav.strane-first {
 .box {
 	height: 240px;
 	display: flex;
-	border-top-width: 70%;
 	position: relative;
 }
 

@@ -4,6 +4,7 @@ var orient = "all";
 var category = "all";
 var res = 12;
 var order = "popular";
+var timeout;
 var pagination = document.getElementsByClassName('pagination');
 for ( var p = 0; p < pagination.length; p++) {
 	pagination[p].style.display = 'none';
@@ -51,7 +52,6 @@ function search (){
 			var el = document.getElementsByClassName('grid')[0];
 			el.innerHTML = string;
 			fadeIn(el);
-			//$('.grid').hide().fadeIn(1000);
 				grid.imagesLoaded().progress( function() {
 				  grid.masonry(masonryOptions);
 				});
@@ -81,12 +81,11 @@ function search (){
 			}
 		}
 	request.send();
-	var el = document.getElementsByClassName('gfirst')[0].style.display = 'block';
-	// setInterval(function(){
-	// // $('.gfirst').fadeIn(2000, function(){
-	// // $('.gfirst').fadeOut(2000);
-	// // 	});
-	// });
+	setInterval(function(){
+	$('.gfirst').fadeIn(2000, function(){
+	$('.gfirst').fadeOut(2000);
+		});
+	});
 }
 var masonryOptions = {
 	itemSelector: '.grid-item',
@@ -141,12 +140,14 @@ setInterval(function(){
 	}
 }, 5000);
 
-// var box = document.getElementsByClassName('slider-item');
+// var box = document.getElementsByClassName('b-outer');
 // for ( var b = 0; b < box.length; b++ ) {
-// 	var el = box[b];
-// 	var siblings = n => [...n.parentElement.children].filter(c=>c!=n);
-// 	el.addEventListener("mouseenter", function( event ) {
-// 		console.log(this.siblings);
+// 	box[b].addEventListener("mouseover", function( event ) {
+// 		var el = this.previousElementSibling.children[0];
+// 		fadeIn(el);
+// 	});
+// 	box[b].addEventListener("mouseout", function( event ) {
+// 		console.log('out');
 // 	});
 // }
 
