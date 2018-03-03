@@ -128,7 +128,7 @@ $('.as').click(function(){
 	$('.jumb-up').toggleClass('jumb-down');
 });
 var count = 0;
-var images = ["slika.jpg", "slika1.jpg", "slika2.jpg", "slika3.jpg"];
+var images = ["img/bg1.jpg", "img/bg2.jpg", "img/bg3.jpg", "img/bg4.jpg"];
 var image = $('.bg-jumb');
 image.css("background-image", "url("+ images[count++] +")");
 setInterval(function(){
