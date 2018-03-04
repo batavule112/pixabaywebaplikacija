@@ -18,7 +18,12 @@
 <body>
 	<div class="container-fluid main">
 		<header class="jumbotron">
-			<div class="bg-jumb jumb-up"></div>
+			<div class="bg-jumb jumb-up">
+				<div class="bg-1"></div>
+				<div class="bg-2"></div>
+				<div class="bg-3"></div>
+				<div class="bg-4"></div>
+			</div>
 			<h1 class="text-center"><b>[Pixabay_image_searcH]</b></h1>
 			<div class="form-inline col-md-8 center">
 				<input class="form-control col-md-10 col-sm-10" type="text" id="search">
@@ -29,7 +34,7 @@
 			</div>
 			<div class="advanced-search form-control text-center col-md-8 center">
 				<div class="row">
-					<div class="col-md-3 col-sm-6 image-type">
+					<section class="col-md-3 col-sm-6 image-type">
 						<label>Image Types:</label>
 					    <select class="form-control" id="type">
 					        <option value="all">All</option>
@@ -37,16 +42,16 @@
 					        <option value="illustration">Illustrations</option>
 					        <option value="vector">Vectors</option>
 					    </select>
-				    </div>
-				    <div class="col-md-3 col-sm-6 orientation">
+				    </section>
+				    <section class="col-md-3 col-sm-6 orientation">
 						<label>Orientation:</label>
 					    <select class="form-control" id="orient">
 					        <option value="all">All</option>
 					        <option value="horizontal">Horizontal</option>
 					        <option value="vertical">Vertical</option>
 					    </select>
-				    </div>
-				    <div class="col-md-3 col-sm-6 category">
+				    </section>
+				    <section class="col-md-3 col-sm-6 category">
 						<label>Category:</label>
 					    <select class="form-control" id="category">
 					        <option value="all">All</option>
@@ -70,8 +75,8 @@
 					        <option value="business">Business</option>
 					        <option value="music">Music</option>
 					    </select>
-				    </div>
-			    	<div class="col-md-3 col-sm-6 per-page">
+				    </section>
+			    	<section class="col-md-3 col-sm-6 per-page">
 						<label>Per page:</label>
 					    <select class="form-control" id="res">
 					        <option value="12">12</option>
@@ -79,9 +84,9 @@
 					        <option value="48">48</option>
 					        <option value="96">96</option>
 					    </select>
-				    </div>
+				    </section>
 			    </div>
-			    <div class="row">
+			    <section class="row">
 				    <div class="col-md-3 col-sm-6 order">
 						<label>Order by:</label>
 					    <select class="form-control" id="order">
@@ -89,12 +94,11 @@
 					        <option value="latest">Latest</option>
 					    </select>
 				    </div>
-				    <nav class="col-md-3 col-sm-6">
+				    <span class="col-md-3 col-sm-6">
 				    	<button type="button" id="searchbutton" class="btn btn-info" onclick="searchClean()">Search</button>
-				    </nav>
-			    </div>
+				    </span>
+			    </section>
 			</div>
-			
 		</header>
 		<nav class="strane strane-first">
 				<ul class='pagination justify-content-center'>
