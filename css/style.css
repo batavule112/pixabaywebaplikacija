@@ -406,6 +406,10 @@ nav.strane-first {
 	animation: 30s slider infinite;
 }
 
+.gfirst {
+
+}
+
 @media screen and (max-width: 768px) {
 	.slider {
 		width: 100%;
@@ -447,6 +451,23 @@ nav.strane-first {
 	87.5% {left:-50.2%;}
 	97.5% {left:-50.2%;}
 	100% {left: 0;}
-}
+	}
 }
 
+@media screen and (max-height: 500px) {
+	.bg-jumb {
+		height: 80vh;
+	}
+	.jumb-down {
+	height: 115vh;
+	}
+}
+
+@media screen and (max-height: 250px) {
+	.bg-jumb {
+		height: 100vh;
+	}
+	.jumb-down {
+	height: 190vh;
+	}
+}
