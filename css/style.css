@@ -424,9 +424,9 @@ img {
 	#searchbutton {
 		margin-top: 12px;
 	}
-	/*h1 {
-		font-size: 160%;
-	}*/
+	h1 {
+		font-size: 200%;
+	}
 	.box:hover .boxinner {
 	transform: scale(1.15);
 	}
