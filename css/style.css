@@ -26,6 +26,10 @@ img {
 	padding: 0;
 }
 
+.main {
+	min-height: 101vh;
+}
+
 .row {
 	margin-right: 10px;
 	margin-left: 10px;
