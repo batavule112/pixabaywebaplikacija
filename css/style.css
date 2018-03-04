@@ -459,22 +459,21 @@ img {
 }
 
 @media screen and (max-height: 660px) {
-	.jumbotron {
-		padding-top: 0px;
+	.jumbotron,
+	.bg-jumb {
+		padding-top: 15px;
 	}
 }
 
 @media screen and (max-height: 550px) {
 	.jumbotron,
 	.bg-jumb {
-		height: 110vh;
+		padding-top: 0;
+		height: 130vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 }
 
-@media screen and (max-height: 380px) {
-	.jumbotron,
-	.bg-jumb {
-		height: 130vh;
-	}
-}
 
