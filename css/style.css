@@ -420,7 +420,7 @@ img {
 	.bg-jumb {
 		display: flex;
 		flex-direction: column;
-		height: 630px;
+		height: 640px;
 	}
 	#searchbutton {
 		margin-top: 12px;
