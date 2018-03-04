@@ -386,16 +386,21 @@ nav.strane-first {
 .slider {
 	overflow: hidden;
 	width: 75%;
+	padding: 0;
+}
+
+.slider:hover figure {
+	animation-play-state: paused;
 }
 
 .slider figure .slider-item {
 	float: left;
-	width: 16.666%;
+	width: 15.2%;
 }
 
 .slider figure {
 	position: relative;
-	width: 200.4%;
+	width: 220%;
 	margin: 0;
 	left: 0;
 	animation: 30s slider infinite;
@@ -422,7 +427,26 @@ nav.strane-first {
 	width: 16.666%;
 	}
 	.slider figure {
-	width: 200.4%;
+	width: 300.6%;
 	}
+	@keyframes slider {
+	0% {left:0;}
+	10% {left:0;}
+	12.5% {left:-50.2%;}
+	22.5% {left:-50.2%;}
+	25% {left:-100.4%;}
+	35% {left:-100.4%;}
+	37.5% {left:-150.6%;}
+	47.5% {left:-150.6%;}
+	50% {left:-200.8%;}
+	60% {left:-200.8%;}
+	62.5% {left:-150.6%;}
+	72.5% {left:-150.6%;}
+	75% {left:-100.4%;}
+	85% {left:-100.4%;}
+	87.5% {left:-50.2%;}
+	97.5% {left:-50.2%;}
+	100% {left: 0;}
+}
 }
 
