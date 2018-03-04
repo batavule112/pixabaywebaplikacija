@@ -31,7 +31,6 @@ function search (){
 		if(this.status === 200){
 			var data = JSON.parse(this.responseText);
 			string = "";
-			string += "<div class='grid-sizer'>";
 			string += "</div>";
 			for(var i = 0; i<data.hits.length; i++) {
 			var content = data.hits[i];
@@ -82,16 +81,17 @@ function search (){
 			}
 		}
 	request.send();
-	setInterval(function(){
-	$('.gfirst').fadeIn(2000, function(){
-	$('.gfirst').fadeOut(2000);
-		});
-	});
+	document.getElementsByClassName('gfirst')[0].style.display = 'block';
+	// setInterval(function(){
+	// $('.gfirst').fadeIn(2000, function(){
+	// $('.gfirst').fadeOut(2000);
+	// 	});
+	// });
 }
 var masonryOptions = {
 	itemSelector: '.grid-item',
 	percentPosition: true,
-	columnWidth: '.grid-sizer'
+	columnWidth: '.grid-item'
 };
 function next() {
 	grid.masonry('destroy');

@@ -160,10 +160,6 @@ nav.strane-first {
 	display: none;
 }
 
-.grid-sizer {
-  width: 25%;
-}
-
 .grid-item {
 	padding: 2px;
 	overflow: hidden;
