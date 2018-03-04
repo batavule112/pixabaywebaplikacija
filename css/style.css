@@ -37,12 +37,12 @@ img {
 /* header */
 .jumbotron {
 	background-color: transparent;
-	height: 55vh;
+	height: 400px;
 }
 
 .bg-jumb {
 	width: 100%;
-	height: 55vh;
+	height: 400px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -410,9 +410,8 @@ img {
 	}
 	.jumbotron,
 	.bg-jumb {
-		height: 70vh;
+		height: 450px;
 	}
-
 }
 
 @media screen and (max-width: 576px) {
@@ -420,7 +419,7 @@ img {
 	.bg-jumb {
 		display: flex;
 		flex-direction: column;
-		height: 90vh;
+		height: 630px;
 	}
 	#searchbutton {
 		margin-top: 12px;
@@ -458,7 +457,7 @@ img {
 	}
 }
 
-@media screen and (max-height: 660px) {
+/*@media screen and (max-height: 660px) {
 	.jumbotron,
 	.bg-jumb {
 		padding-top: 15px;
@@ -477,3 +476,4 @@ img {
 }
 
 
+*/
