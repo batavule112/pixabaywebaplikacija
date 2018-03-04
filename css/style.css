@@ -467,7 +467,7 @@ img {
 @media screen and (max-height: 550px) {
 	.jumbotron,
 	.bg-jumb {
-		height: 80vh;
+		height: 110vh;
 	}
 }
 
@@ -476,8 +476,5 @@ img {
 	.bg-jumb {
 		height: 130vh;
 	}
-	.jumb-down {
-	height: 310vh;
-}
 }
 

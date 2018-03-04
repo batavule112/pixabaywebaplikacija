@@ -124,7 +124,7 @@ var inner = $('.jumbotron').outerHeight();
 var outer = $('.jumbotron1').outerHeight();
 $('.as').click(function(){
 	$('.advanced-search').slideToggle(500);
-	$('.jumb-up').toggleClass('jumb-down');
+	// $('.jumb-up').toggleClass('jumb-down');
 });
 // var count = 0;
 // var images = ["img/bg1.jpg", "img/bg2.jpg", "img/bg3.jpg", "img/bg4.jpg"];
