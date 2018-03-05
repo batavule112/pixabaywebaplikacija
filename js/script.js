@@ -32,7 +32,6 @@ function search (){
 		if(this.status === 200){
 			var data = JSON.parse(this.responseText);
 			string = "";
-			string += "<div id='theContent'>";
 			for(var i = 0; i<data.hits.length; i++) {
 			var content = data.hits[i];
 			string += "<div class='col-md-3 col-sm-6 grid-item'>";
@@ -49,11 +48,7 @@ function search (){
 			string += "<h6>" + content.views + "</h6>";
 			string += "</div>";
 			string += "</div>";
-			string += "</div>";
-			if ((i+1) % res == 0 ) {
-				string += "</div>";
-				}
-			}
+			string += "</div>"; }
 			var el = document.getElementsByClassName('grid')[0];
 			el.innerHTML = string;
 			fadeIn(el);
