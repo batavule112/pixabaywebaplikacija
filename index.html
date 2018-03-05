@@ -36,7 +36,7 @@
 				<div class="row">
 					<section class="col-md-3 col-sm-6 image-type">
 						<label>Image Types:</label>
-					    <select class="form-control" id="type">
+					    <select class="form-control" id="type" onchange="valueChange()">
 					        <option value="all">All</option>
 					        <option value="photo">Photos</option>
 					        <option value="illustration">Illustrations</option>
@@ -45,7 +45,7 @@
 				    </section>
 				    <section class="col-md-3 col-sm-6 orientation">
 						<label>Orientation:</label>
-					    <select class="form-control" id="orient">
+					    <select class="form-control" id="orient" onchange="valueChange()">
 					        <option value="all">All</option>
 					        <option value="horizontal">Horizontal</option>
 					        <option value="vertical">Vertical</option>
@@ -53,7 +53,7 @@
 				    </section>
 				    <section class="col-md-3 col-sm-6 category">
 						<label>Category:</label>
-					    <select class="form-control" id="category">
+					    <select class="form-control" id="category" onchange="valueChange()">
 					        <option value="all">All</option>
 					        <option value="fashion">Fashion</option>
 					        <option value="backgrounds">Backgrounds</option>
@@ -78,7 +78,7 @@
 				    </section>
 			    	<section class="col-md-3 col-sm-6 per-page">
 						<label>Per page:</label>
-					    <select class="form-control" id="res">
+					    <select class="form-control" id="res" onchange="valueChange()">
 					        <option value="12">12</option>
 					        <option value="24">24</option>
 					        <option value="48">48</option>
@@ -89,7 +89,7 @@
 			    <section class="row">
 				    <div class="col-md-3 col-sm-6 order">
 						<label>Order by:</label>
-					    <select class="form-control" id="order">
+					    <select class="form-control" id="order" onchange="valueChange()">
 					        <option value="popular">Popular</option>
 					        <option value="latest">Latest</option>
 					    </select>
@@ -114,6 +114,7 @@
 				</ul>
 			</nav>
 		<div class="grid">
+			<div id="theContent"></div>
 		</div>
 		<nav class="strane">
 			<ul class='pagination justify-content-center'>
@@ -212,11 +213,11 @@
 				</div>
 				<div class="col-md-6 bottom">
 					<div class="footer">
-						<a href="https://pixabay.com/"><img src="img/pixabay.png" /></a>
-						<a href="https://github.com/batavule112"><i class="fab fa-github-square"></i></a>
-						<a href="https://plus.google.com/discover"><i class="fab fa-google-plus-square"></i></a>
-						<a href="https://www.facebook.com/miodrag.vukovic.33"><i class="fab fa-facebook-square"></i></a>
-						<a href="https://twitter.com/?lang=sr"><i class="fab fa-twitter-square"></i></a>
+						<a href="https://pixabay.com/" target="_blank"><img src="img/pixabay.png" /></a>
+						<a href="https://github.com/batavule112" target="_blank"><i class="fab fa-github-square"></i></a>
+						<a href="https://plus.google.com/discover" target="_blank"><i class="fab fa-google-plus-square"></i></a>
+						<a href="https://www.facebook.com/miodrag.vukovic.33" target="_blank"><i class="fab fa-facebook-square"></i></a>
+						<a href="https://twitter.com/?lang=sr" target="_blank"><i class="fab fa-twitter-square"></i></a>
 					</div>
 				</div>
 			</div>

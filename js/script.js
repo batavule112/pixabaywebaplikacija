@@ -7,12 +7,13 @@ var order = "popular";
 var timeout;
 var grid = $('.grid');
 var pagination = document.getElementsByClassName('pagination');
+var child = document.getElementById('theContent');
 for ( var p = 0; p < pagination.length; p++) {
 	pagination[p].style.display = 'none';
 }
 function searchClean() {
+	grid.children('div').remove();
 	grid.masonry('destroy');
-	$(".grid").children('div').remove();
 	page = 1;
 	search();
 }
@@ -31,7 +32,7 @@ function search (){
 		if(this.status === 200){
 			var data = JSON.parse(this.responseText);
 			string = "";
-			string += "</div>";
+			string += "<div id='theContent'>";
 			for(var i = 0; i<data.hits.length; i++) {
 			var content = data.hits[i];
 			string += "<div class='col-md-3 col-sm-6 grid-item'>";
@@ -48,7 +49,11 @@ function search (){
 			string += "<h6>" + content.views + "</h6>";
 			string += "</div>";
 			string += "</div>";
-			string += "</div>"; }
+			string += "</div>";
+			if ((i+1) % res == 0 ) {
+				string += "</div>";
+				}
+			}
 			var el = document.getElementsByClassName('grid')[0];
 			el.innerHTML = string;
 			fadeIn(el);
@@ -105,23 +110,18 @@ function prev(){
 	page = page-1;
 	search();
 }
-$('#type').change(function(){
- imageType = $('#type option:selected').val();
-});
-$('#orient').change(function(){
- orient = $('#orient option:selected').val();
-});
-$('#category').change(function(){
- category = $('#category option:selected').val();
-});
-$('#res').change(function(){
- res = $('#res option:selected').val();
-});
-$('#order').change(function(){
- order = $('#order option:selected').val();
-});
-var inner = $('.jumbotron').outerHeight();
-var outer = $('.jumbotron1').outerHeight();
+function valueChange() {
+	var tip = document.getElementById('type').value;
+	imageType = tip;
+	var ori = document.getElementById('orient').value;
+	orient = ori;
+	var cate = document.getElementById('category').value;
+	category = cate;
+	var per = document.getElementById('res').value;
+	res = per;
+	var ord = document.getElementById('order').value;
+	order = ord;
+}
 $('.as').click(function(){
 	$('.advanced-search').slideToggle(500);
 	// $('.jumb-up').toggleClass('jumb-down');
