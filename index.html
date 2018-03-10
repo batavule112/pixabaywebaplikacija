@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="./fancybox/dist/jquery.fancybox.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link  href="./fancybox/dist/jquery.fancybox.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
@@ -16,8 +16,11 @@
 	<title>Pixabay Search</title>
 </head>
 <body>
-	<div class="container-fluid main">
-		<header class="jumbotron jumb-up justify-content-center">
+	<!-- photos stuff -->
+<div class="all-the-stuff">
+	<div class="container-fluid photos front">
+		<button class="text-center click col-sm-2 btn btn-info">Videos</button>
+		<header class="jumbotron jumb-p justify-content-center">
 			<div class="bg-jumb jumb-up">
 				<div class="bg-1"></div>
 				<div class="bg-2"></div>
@@ -56,6 +59,7 @@
 					    <select class="form-control" id="category" onchange="valueChange()">
 					        <option value="all">All</option>
 					        <option value="fashion">Fashion</option>
+					        <option value="nature">Nature</option>
 					        <option value="backgrounds">Backgrounds</option>
 					        <option value="science">Science</option>
 					        <option value="education">Education</option>
@@ -86,42 +90,42 @@
 					    </select>
 				    </section>
 			    </div>
-			    <section class="row">
-				    <div class="col-md-3 col-sm-6 order">
+			    <div class="row justify-content-between">
+				    <section class="col-md-3 col-sm-6 order">
 						<label>Order by:</label>
 					    <select class="form-control" id="order" onchange="valueChange()">
 					        <option value="popular">Popular</option>
 					        <option value="latest">Latest</option>
 					    </select>
-				    </div>
+				    </section>
 				    <span class="col-md-3 col-sm-6">
 				    	<button type="button" id="searchbutton" class="btn btn-info" onclick="searchClean()">Search</button>
 				    </span>
-			    </section>
+			    </div>
 			</div>
 		</header>
-		<nav class="strane strane-first">
-				<ul class='pagination justify-content-center'>
-					<li class='page-item prev'>
-						<p class='page-link' onclick="prev()">Prev</p>
-					</li>
-					<li class='page-item'>
-						<p id="info" class='page-link track'></p>
-					</li>
-					<li class='page-item next'>
-						<p class='page-link' onclick="next()">Next</p>
-					</li>
-				</ul>
-			</nav>
-		<div class="grid">
-		</div>
 		<nav class="strane">
-			<ul class='pagination justify-content-center'>
+			<ul class='pagination pagip justify-content-center'>
 				<li class='page-item prev'>
 					<p class='page-link' onclick="prev()">Prev</p>
 				</li>
 				<li class='page-item'>
-					<p id="info" class='page-link track'></p>
+					<p class='page-link track'></p>
+				</li>
+				<li class='page-item next'>
+					<p class='page-link' onclick="next()">Next</p>
+				</li>
+			</ul>
+		</nav>
+		<div class="grid">
+		</div>
+		<nav class="strane">
+			<ul class='pagination pagip justify-content-center'>
+				<li class='page-item prev'>
+					<p class='page-link' onclick="prev()">Prev</p>
+				</li>
+				<li class='page-item'>
+					<p class='page-link track'></p>
 				</li>
 				<li class='page-item next'>
 					<p class='page-link' onclick="next()">Next</p>
@@ -203,25 +207,126 @@
 				</figure>
 			</div>
 			</div>
-			</div>
-			<div class="row justify-content-between">
-				<div class="col-md-3">
-					<div class="spacer">
-						<a href=""><h4 class="glow gfirst" data-text="[H_o_m_E]">[H_o_m_E]</h4></a>
-					</div>
+		</div>
+		<div class="row justify-content-between">
+			<div class="col-md-3">
+				<div class="spacer">
+					<a href=""><h4 class="glow gfirst" data-text="[H_o_m_E]">[H_o_m_E]</h4></a>
 				</div>
-				<div class="col-md-6 bottom">
-					<div class="footer">
-						<a href="https://pixabay.com/" target="_blank"><img src="img/pixabay.png" /></a>
-						<a href="https://github.com/batavule112" target="_blank"><i class="fab fa-github-square"></i></a>
-						<a href="https://plus.google.com/discover" target="_blank"><i class="fab fa-google-plus-square"></i></a>
-						<a href="https://www.facebook.com/miodrag.vukovic.33" target="_blank"><i class="fab fa-facebook-square"></i></a>
-						<a href="https://twitter.com/?lang=sr" target="_blank"><i class="fab fa-twitter-square"></i></a>
-					</div>
+			</div>
+			<div class="col-md-6 bottom">
+				<div class="footer">
+					<a href="https://pixabay.com/" target="_blank"><img src="img/pixabay.png" /></a>
+					<a href="https://github.com/batavule112" target="_blank"><i class="fab fa-github-square"></i></a>
+					<a href="https://plus.google.com/discover" target="_blank"><i class="fab fa-google-plus-square"></i></a>
+					<a href="https://www.facebook.com/miodrag.vukovic.33" target="_blank"><i class="fab fa-facebook-square"></i></a>
+					<a href="https://twitter.com/?lang=sr" target="_blank"><i class="fab fa-twitter-square"></i></a>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- photos stuff END -->
+	<div class="container-fluid videos back">
+		<button class="text-center click col-sm-2 btn btn-danger">Photos</button>
+		<header class="jumbotron jumb-v justify-content-center">
+			<h1 class="text-center"><b>[Pixabay_videos_searcH]</b></h1>
+			<div class="form-inline col-md-8 center">
+				<input class="form-control col-md-10 col-sm-10" type="text" id="searchVid">
+				<button type="button" class="col-md-2 col-sm-2 btn btn-danger" onclick="searchV()">Search</button>
+			</div>
+			<div class="row">
+				<button type="button" class="vas center btn btn-danger">Advanced Search</button>
+			</div>
+			<div class="advanced-search-v form-control text-center col-md-8 center">
+				<div class="row">
+					<section class="col-md-3 col-sm-6 video-type">
+						<label>Image Types:</label>
+					    <select class="form-control" id="vtype" onchange="valueChange()">
+					        <option value="all">All</option>
+					        <option value="film">Film</option>
+					        <option value="animation">Animation</option>
+					    </select>
+				    </section>
+				    <section class="col-md-3 col-sm-6 category-v">
+						<label>Category:</label>
+					    <select class="form-control" id="category-v" onchange="valueChange()">
+					        <option value="all">All</option>
+					        <option value="fashion">Fashion</option>
+					        <option value="nature">Nature</option>
+					        <option value="backgrounds">Backgrounds</option>
+					        <option value="science">Science</option>
+					        <option value="education">Education</option>
+					        <option value="people">People</option>
+					        <option value="feelings">Feelings</option>
+					        <option value="religion">Religion</option>
+					        <option value="health">Health</option>
+					        <option value="places">Places</option>
+					        <option value="animals">Animals</option>
+					        <option value="industry">Industry</option>
+					        <option value="food">Food</option>
+					        <option value="computer">Computer</option>
+					        <option value="sports">Sports</option>
+					        <option value="transportation">Vehicles</option>
+					        <option value="travel">Travel</option>
+					        <option value="buildings">Buildings</option>
+					        <option value="business">Business</option>
+					        <option value="music">Music</option>
+					    </select>
+				    </section>
+				    <section class="col-md-3 col-sm-6 order-v">
+						<label>Order by:</label>
+					    <select class="form-control" id="order-v" onchange="valueChange()">
+					        <option value="popular">Popular</option>
+					        <option value="latest">Latest</option>
+					    </select>
+				    </section>
+				    <section class="col-md-3 col-sm-6 per-page-v">
+						<label>Per page:</label>
+					    <select class="form-control" id="res-v" onchange="valueChange()">
+					        <option value="12">12</option>
+					        <option value="24">24</option>
+					        <option value="48">48</option>
+					        <option value="96">96</option>
+					    </select>
+				    </section>
+				</div>
+				<div class="row justify-content-center">
+					<span class="col-md-3 col-sm-6">
+					    <button type="button" id="searchbutton1" class="btn btn-danger" onclick="searchV()">Search</button>
+					</span>
+				</div>
+			</div>
+		</header>
+		<nav class="stranev">
+			<ul class='pagination pagiv justify-content-center'>
+				<li class='page-item prev-v'>
+					<p class='page-link' onclick="prevV()">Prev</p>
+				</li>
+				<li class='page-item'>
+					<p class='page-link track-v'></p>
+				</li>
+				<li class='page-item next-v'>
+					<p class='page-link' onclick="nextV()">Next</p>
+				</li>
+			</ul>
+		</nav>
+		<div class="gridv">
+		</div>
+		<nav class="stranev">
+			<ul class='pagination pagiv justify-content-center'>
+				<li class='page-item prev-v'>
+					<p class='page-link' onclick="prevV()">Prev</p>
+				</li>
+				<li class='page-item'>
+					<p class='page-link track-v'></p>
+				</li>
+				<li class='page-item next-v'>
+					<p class='page-link' onclick="nextV()">Next</p>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div>
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

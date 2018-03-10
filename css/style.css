@@ -4,15 +4,13 @@
 	font-family: 'Bellefair', serif;
 }
 
-h1 {
+.jumb-p h1 {
 	text-shadow: 0 0 30px #17a2b8;
 	color: #fff;
 }
 
 body {
-	background-image: url("../img/background.jpg");
-	background-size: cover;
-	background-attachment: fixed;
+	/*perspective: 1000px;*/
 }
 
 img {
@@ -27,23 +25,27 @@ img {
 	padding: 0;
 }
 
-.main {
-	min-height: 101vh;
-}
-
 .row {
 	margin-right: 10px;
 	margin-left: 10px;
 }
+/* PHOTOS CSS */
 /* header */
+.photos {
+	background-image: url("../img/background.jpg");
+	background-color: black;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
 .jumbotron {
 	background-color: transparent;
-	height: 400px;
+	height: 440px;
 }
 
 .bg-jumb {
 	width: 100%;
-	height: 400px;
+	height: 440px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -115,25 +117,28 @@ img {
 	100% {opacity:0;}
 }
 
-.as {
+.as, .vas {
 	margin-top: 10px;
 }
-
+.advanced-search-v,
 .advanced-search {
 	position: relative;
 	margin-top: 5px;
 	display: none;
 }
 
+.advanced-search-v label,
 .advanced-search label {
 	font-size: 90%;
 }
 
+.stranev,
 .strane {
 	margin-top: 15px;
 }
 
-.info h6 {
+.info h6,
+.info1 h6 {
 	margin-top: 4px;
 	color: white;
 }
@@ -142,11 +147,13 @@ img {
 	font-size: 90%;
 }
 
-#searchbutton {
+#searchbutton,
+#searchbutton1 {
 	margin-top: 32px;
 	width: 100%;
 }
 /* content */
+.gridv,
 .grid {
 	padding-top: 10px;
 	border-top: 2px dotted #fff;
@@ -172,7 +179,8 @@ img {
 	margin-right: 10px;
 }
 
-.info svg {
+.info svg,
+.info1 svg {
 	margin-top: 2px;
 	width: 20px;
 	height: 20px;
@@ -233,7 +241,7 @@ img {
 }
 
 .box:hover .boxinner {
-	transform: scale(1.20);
+	transform: scale(1.10);
 }
 
 .box {
@@ -411,7 +419,7 @@ img {
 	}
 	.jumbotron,
 	.bg-jumb {
-		height: 450px;
+		height: 500px;
 	}
 }
 
@@ -420,16 +428,17 @@ img {
 	.bg-jumb {
 		display: flex;
 		flex-direction: column;
-		height: 640px;
+		height: 700px;
 	}
-	#searchbutton {
+	#searchbutton,
+	#searchbutton1 {
 		margin-top: 12px;
 	}
 	h1 {
 		font-size: 200%;
 	}
 	.box:hover .boxinner {
-	transform: scale(1.15);
+	transform: scale(1.05);
 	}
 	.slider figure .slider-item {
 	width: 16.666%;
@@ -457,24 +466,96 @@ img {
 	100% {left: 0;}
 	}
 }
-
-/*@media screen and (max-height: 660px) {
-	.jumbotron,
-	.bg-jumb {
-		padding-top: 15px;
-	}
+/* PHOTOS CSS ENDS HERE*/
+/* FLIP STUFF */
+.click {
+	position: absolute;
 }
 
-@media screen and (max-height: 550px) {
-	.jumbotron,
-	.bg-jumb {
-		padding-top: 0;
-		height: 130vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
+.back {
+	min-height: 101vh;
+	background-color: yellow;
+	transform: rotateY(180deg);
+	position: absolute;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+}
+
+.front {
+	min-height: 101vh;
+	position: absolute;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+}
+
+.all-the-stuff {
+	transform: rotateY(0deg);
+	transform-style: preserve-3d;
+	transition: .5s;
+}
+
+.all-the-stuff.flip {
+	transform: rotateY(180deg);
+}
+
+.main {
+	max-height: 101vh;
+	overflow-y: hidden;
+}
+
+/* VIDEO STUFF START HERE */
+
+.videos {
+	background-image: url("../img/baa.jpg");
+	background-color: black;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.jumb-v {
+	background-image: url("https://media.giphy.com/media/3ohc0S7yEG9ZnP9bt6/giphy.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+}
+
+.jumb-v h1 {
+	text-shadow: 0 0 30px #dc3545;
+	color: #fff;
+}
+
+.gridv video {
+	height: 100%;
+	width: 100%;
+	border-radius: 10px;
+	border: 1px dotted white;
+}
+
+.fancybox-slide video {
+	background-color: black;
+	max-width: 90%;
+	margin: 0 auto;
+	padding: 0;
+	max-height: 95vh;
 }
 
 
-*/
+.info1 {
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	bottom: -25px;
+	height: 25px;
+	width: 99%;
+	transition: 1s;
+	background-color: #000000;
+	opacity: 0.5;
+}
+
+.grid-item:hover .info1 {
+	transform: translateY(-30px);
+}
+
+.gridv {
+	display: none;
+}
