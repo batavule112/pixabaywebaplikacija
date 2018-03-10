@@ -199,12 +199,11 @@ function searchV() {
 			string += "<div class='row'>";
 			for(var i = 0; i<data.hits.length; i++) {
 			var content = data.hits[i];
+			var sizep = "200x150";
 			size = "tiny";
 			string += "<div class='col-md-3 col-sm-6 grid-item'>";
 			string += "<a class='iframe' data-fancybox='videos' href='"+ content.videos.medium.url +"'>";
-			string += "<video>";
-			string += "<source src="+ content.videos.tiny.url +">";
-			string += "</video>";
+			string += "<img src='https://i.vimeocdn.com/video/"+ content.picture_id +"_"+ sizep +".jpg'/>";
 			string += "</a>";
 			string += "<div class='info1'>";
 			string += "<div class='likes'>";
