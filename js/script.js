@@ -30,7 +30,7 @@ document.getElementById('search').addEventListener("keyup", function(event) {
     searchClean();
     } 
 });
-function search (){
+function search() {
 	var url = "https://pixabay.com/api/?key=7964595-ef854d08be69ff790495f4514&order="+ order +"&page="+ page +"&per_page="+ res +"&category="+ category +"&orientation="+ orient +"&image_type="+ imageType +"&q=";
 	var inputSearch = document.getElementById('search').value;
 	var request = new XMLHttpRequest();
@@ -176,10 +176,14 @@ function height() {
 	} else 
 		$('.back').removeClass('main');
 }
+function searchCleanV() {
+	pageV = 1;
+	searchV();
+}
 document.getElementById('searchVid').addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode === 13) {
-    searchV();
+    searchCleanV()
     } 
 });
 function searchV() {
