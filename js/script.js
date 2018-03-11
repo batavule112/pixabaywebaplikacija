@@ -177,6 +177,7 @@ function height() {
 		$('.back').removeClass('main');
 }
 function searchCleanV() {
+	gridv.masonry('destroy');
 	pageV = 1;
 	searchV();
 }
@@ -196,11 +197,10 @@ function searchV() {
 			var data = JSON.parse(this.responseText);
 			console.log(data);
 			string = "";
-			string += "<div class='row'>";
+			// string += "<div class='row'>";
 			for(var i = 0; i<data.hits.length; i++) {
 			var content = data.hits[i];
 			var sizep = "200x150";
-			size = "tiny";
 			string += "<div class='col-md-3 col-sm-6 grid-item'>";
 			string += "<a class='iframe' data-fancybox='videos' href='"+ content.videos.medium.url +"'>";
 			string += "<img src='https://i.vimeocdn.com/video/"+ content.picture_id +"_"+ sizep +".jpg'/>";
@@ -216,12 +216,16 @@ function searchV() {
 			string += "</div>";
 			string += "</div>";
 			string += "</div>";
-			if ((i+1) % 4 == 0) {
-				string += "</div>";
-				string += "<div class='row'>"; }}
+			// if ((i+1) % 4 == 0) {
+			// 	string += "</div>";
+			// 	string += "<div class='row'>";
+				}
 			var el = document.getElementsByClassName('gridv')[0];
 			el.innerHTML = string;
 			fadeIn(el);
+			gridv.imagesLoaded().progress( function() {
+				  gridv.masonry(masonryOptions);
+				});
 			$('.iframe').fancybox();
 			var numOfPages = Math.round(data.totalHits / resV);
 				document.getElementsByClassName('track-v')[0].innerHTML = pageV+" / "+numOfPages;
@@ -251,10 +255,12 @@ function searchV() {
 	request.send();
 }
 function nextV() {
+	gridv.masonry('destroy');
 	pageV = pageV+1;
 	searchV();
 }
 function prevV(){
+	gridv.masonry('destroy');
 	pageV = pageV-1;
 	searchV();
 }
