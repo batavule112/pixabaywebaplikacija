@@ -197,7 +197,6 @@ function searchV() {
 			var data = JSON.parse(this.responseText);
 			console.log(data);
 			string = "";
-			// string += "<div class='row'>";
 			for(var i = 0; i<data.hits.length; i++) {
 			var content = data.hits[i];
 			var sizep = "200x150";
@@ -215,11 +214,7 @@ function searchV() {
 			string += "<h6>" + content.views + "</h6>";
 			string += "</div>";
 			string += "</div>";
-			string += "</div>";
-			// if ((i+1) % 4 == 0) {
-			// 	string += "</div>";
-			// 	string += "<div class='row'>";
-				}
+			string += "</div>"; }
 			var el = document.getElementsByClassName('gridv')[0];
 			el.innerHTML = string;
 			fadeIn(el);

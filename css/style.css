@@ -7,6 +7,8 @@
 .jumb-p h1 {
 	text-shadow: 0 0 30px #17a2b8;
 	color: #fff;
+	position: relative;
+	z-index: 2;
 }
 
 img {
@@ -15,6 +17,7 @@ img {
 
 .center {
 	margin: 0 auto;
+	z-index: 2;
 }
 
 .container-fluid {
@@ -39,13 +42,151 @@ img {
 	height: 440px;
 }
 
+.upper-box {
+	position: absolute;
+	height: 440px;
+	width: 100%;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.upper-box-inner {
+	position: absolute;
+	width: 130%;
+	transform: skew(-15deg);
+	height: 100%;
+	display: flex;
+	left: -15%;
+}
+
+.slider-top {
+	position: relative;
+	width: 33.3%;
+	height: 100%;
+	overflow: hidden;
+	border: 1px solid black;
+}
+
+.slika {
+	position: relative;
+	height: 100%;
+	width: 200%;
+	transform: skew(15deg);
+	left: -50%;
+}
+
+.slike {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+}
+
+.sm1 {
+	background-image: url("https://pixabay.com/get/eb35b90c2cfd033ed1584d05fb1d419fe573e7dc1cac104497f0c87aa4e4b7b0_640.jpg");
+	animation: fading1 30s infinite;
+}
+
+.sm2 {
+	background-image: url("https://pixabay.com/get/ea35b90d20f7033ed1584d05fb1d419fe573e7dc1cac104497f0c87aa3e9b1b8_640.jpg");
+	animation: fading2 30s infinite;
+}
+
+.sm3 {
+	background-image: url("https://pixabay.com/get/eb32b5062dfc093ed1584d05fb1d419fe573e7dc1cac104497f0c87aa3ebb4bd_640.jpg");
+	animation: fading3 30s infinite;
+}
+
+.sm4 {
+	background-image: url("https://pixabay.com/get/ec35b70e2af41c22d2524518b74b4f90e772ebd004b0144395f9c27da1eab6_640.jpg");
+	animation: fading4 30s infinite;
+}
+
+.sl1 {
+	background-image: url("https://pixabay.com/get/e831b50a2cfc083ed1584d05fb1d419fe573e7dc1cac104497f0c87aafebb3ba_640.jpg");
+	animation: fading1 30s infinite reverse;
+}
+
+.sl2 {
+	background-image: url("https://pixabay.com/get/ea37b0072cf5033ed1584d05fb1d419fe573e7dc1cac104497f0c87aa0eabcbf_640.jpg");
+	animation: fading2 30s infinite reverse;
+}
+
+.sl3 {
+	background-image: url("https://pixabay.com/get/ea37b00621f5063ed1584d05fb1d419fe573e7dc1cac104497f0c87aa0eab7ba_640.jpg");
+	animation: fading3 30s infinite reverse;
+}
+
+.sl4 {
+	background-image: url("https://pixabay.com/get/ea34b8062ef5013ed1584d05fb1d419fe573e7dc1cac104497f0c87da3ebb6bd_640.jpg");
+	animation: fading4 30s infinite reverse;
+}
+
+.sr1 {
+	background-image: url("https://pixabay.com/get/ea34b60b2ff6083ed1584d05fb1d419fe573e7dc1cac104497f0c87da3e5b5bd_640.jpg");
+	animation: fading1 40s infinite reverse;
+}
+
+.sr2 {
+	background-image: url("https://pixabay.com/get/ea34b80628f5013ed1584d05fb1d419fe573e7dc1cac104497f0c87da3ebb6bd_640.jpg");
+	animation: fading2 40s infinite reverse;
+}
+
+.sr3 {
+	background-image: url("https://pixabay.com/get/ea37b00a2cf6043ed1584d05fb1d419fe573e7dc1cac104497f0c87da3e9b2b9_640.jpg");
+	animation: fading3 40s infinite reverse;
+}
+
+.sr4 {
+	background-image: url("https://pixabay.com/get/ea37b0092af0053ed1584d05fb1d419fe573e7dc1cac104497f0c87da3e9b2b9_640.jpg");
+	animation: fading4 40s infinite reverse;
+}
+
+@keyframes fading1 {
+	0% {opacity:1}
+	25% {opacity:0;}
+	50% {opacity:0;}
+	75% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@keyframes fading2 {
+	0% {opacity:0}
+	25% {opacity:1;}
+	50% {opacity:0;}
+	75% {opacity:0;}
+	100% {opacity:0;}
+}
+
+@keyframes fading3 {
+	0% {opacity:0}
+	25% {opacity:0;}
+	50% {opacity:1;}
+	75% {opacity:0;}
+	100% {opacity:0;}
+}
+
+@keyframes fading4 {
+	0% {opacity:0}
+	25% {opacity:0;}
+	50% {opacity:0;}
+	75% {opacity:1;}
+	100% {opacity:0;}
+}
+
+
 .bg-jumb {
 	width: 100%;
 	height: 440px;
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: -1;
+	z-index: 1;
 	transition: .6s;
 	overflow-y: hidden;
 }
@@ -414,14 +555,18 @@ img {
 		width: 100%;
 	}
 	.jumbotron,
-	.bg-jumb {
+	.upper-box {
 		height: 500px;
 	}
 }
 
 @media screen and (max-width: 576px) {
+	.upper-box-inner {
+		width: 140%;
+	}
+
 	.jumbotron,
-	.bg-jumb {
+	.upper-box {
 		display: flex;
 		flex-direction: column;
 		height: 700px;
@@ -466,6 +611,7 @@ img {
 /* FLIP STUFF */
 .click {
 	position: absolute;
+	z-index: 2;
 }
 
 .back {
@@ -509,15 +655,17 @@ img {
 }
 
 .jumb-v {
-	background-image: url("https://media.giphy.com/media/3ohc0S7yEG9ZnP9bt6/giphy.gif");
+/*	background-image: url("https://media.giphy.com/media/3ohc0S7yEG9ZnP9bt6/giphy.gif");
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center top;
+	background-position: center top;*/
 }
 
 .jumb-v h1 {
 	text-shadow: 0 0 30px #dc3545;
 	color: #fff;
+	z-index: 2;
+	position: relative;
 }
 
 .gridv video {
