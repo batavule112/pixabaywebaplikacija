@@ -110,6 +110,11 @@ function prev(){
 	page = page-1;
 	search();
 }
+$('.page-item').click(function(){
+$("html, body").animate({
+	scrollTop: $('.grid').offset().top
+}, 500)
+});
 function valueChange() {
 	imageType = document.getElementById('type').value;
 	orient = document.getElementById('orient').value;
