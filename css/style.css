@@ -147,39 +147,6 @@ img {
 	animation: fading4 40s infinite reverse;
 }
 
-@keyframes fading1 {
-	0% {opacity:1}
-	25% {opacity:0;}
-	50% {opacity:0;}
-	75% {opacity:0;}
-	100% {opacity:1;}
-}
-
-@keyframes fading2 {
-	0% {opacity:0}
-	25% {opacity:1;}
-	50% {opacity:0;}
-	75% {opacity:0;}
-	100% {opacity:0;}
-}
-
-@keyframes fading3 {
-	0% {opacity:0}
-	25% {opacity:0;}
-	50% {opacity:1;}
-	75% {opacity:0;}
-	100% {opacity:0;}
-}
-
-@keyframes fading4 {
-	0% {opacity:0}
-	25% {opacity:0;}
-	50% {opacity:0;}
-	75% {opacity:1;}
-	100% {opacity:0;}
-}
-
-
 .bg-jumb {
 	width: 100%;
 	height: 440px;
@@ -203,22 +170,22 @@ img {
 }
 
 .bg-1 {
-	background-image: url("../img/bg1.jpg");
+	background-image: url("https://pixabay.com/get/ea37b30d28fc003ed1584d05fb1d419fe573e7dc1cac104497f0c871a1eab3ba_640.jpg");
 	animation: fading1 30s infinite;
 }
 
 .bg-2 {
-	background-image: url("../img/bg2.jpg");
+	background-image: url("https://pixabay.com/get/ea34b4092ff3003ed1584d05fb1d419fe573e7dc1cac104497f0c871a1e5b0bd_640.jpg");
 	animation: fading2 30s infinite;
 }
 
 .bg-3 {
-	background-image: url("../img/bg3.jpg");
+	background-image: url("https://pixabay.com/get/ec31b10e2af61c22d2524518b74b4f90e772ebd004b0144395f9c97faeebb6_640.jpg");
 	animation: fading3 30s infinite;
 }
 
 .bg-4 {
-	background-image: url("../img/bg4.jpg");
+	background-image: url("https://pixabay.com/get/ea35b20e2ff4053ed1584d05fb1d419fe573e7dc1cac104497f0c871a0edb7be_640.jpg");
 	animation: fading4 30s infinite;
 }
 
