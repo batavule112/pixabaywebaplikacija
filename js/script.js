@@ -112,7 +112,7 @@ function prev(){
 }
 $('.page-item').click(function(){
 $("html, body").animate({
-	scrollTop: $('.grid').offset().top
+	scrollTop: $('.jumbotron').outerHeight()
 }, 500)
 });
 function valueChange() {
