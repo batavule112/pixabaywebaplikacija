@@ -200,7 +200,6 @@ function searchV() {
 	request.onload = function(){
 		if(this.status === 200){
 			var data = JSON.parse(this.responseText);
-			console.log(data);
 			string = "";
 			for(var i = 0; i<data.hits.length; i++) {
 			var content = data.hits[i];
