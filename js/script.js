@@ -113,7 +113,7 @@ function prev(){
 $('.page-item').click(function(){
 $("html, body").animate({
 	scrollTop: $('.jumbotron').outerHeight()
-}, 500)
+}, 1500)
 });
 function valueChange() {
 	imageType = document.getElementById('type').value;
@@ -145,9 +145,11 @@ $('.vas').click(function(){
 
 $('.box').mouseover(function(){
 	$(this).siblings('div').children('h4').fadeIn(700);
+	$(this).children('.boxinner').css('opacity', 1);
 });
 $('.box').mouseleave(function(){
 	$(this).siblings('div').children('h4').fadeOut(700);
+	$(this).children('.boxinner').css('opacity', .5);
 });
 function categoryPicker(cat) {
 	var value = cat.getAttribute("data-category-type");

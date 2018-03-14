@@ -54,6 +54,7 @@ img {
 
 .upper-box-inner {
 	position: absolute;
+	/*overflow-x: hidden;*/
 	width: 130%;
 	transform: skew(-15deg);
 	height: 100%;
@@ -342,6 +343,7 @@ img {
 	background-repeat: no-repeat;
 	cursor: pointer;
 	transition: 1s;
+	opacity: .5;
 }
 
 .box:hover .boxinner {
@@ -364,7 +366,8 @@ img {
 
 .first {
 	background-color: #17a2b8;;
-	border-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	flex-direction: column;
 	word-wrap: break-word;
 	justify-content: center;
