@@ -11,6 +11,7 @@ var order = "popular";
 var orderV = "popular";
 var grid = $('.grid');
 var gridv = $('.gridv');
+var request = new XMLHttpRequest();
 var paginationp = document.getElementsByClassName('pagip');
 for ( var p = 0; p < paginationp.length; p++) {
 	paginationp[p].style.display = 'none';
@@ -33,12 +34,11 @@ document.getElementById('search').addEventListener("keyup", function(event) {
 function search() {
 	var url = "https://pixabay.com/api/?key=7964595-ef854d08be69ff790495f4514&order="+ order +"&page="+ page +"&per_page="+ res +"&category="+ category +"&orientation="+ orient +"&image_type="+ imageType +"&q=";
 	var inputSearch = document.getElementById('search').value;
-	var request = new XMLHttpRequest();
 	request.open('GET', url + inputSearch, true);
 	request.onload = function(){
 		if(this.status === 200){
 			var data = JSON.parse(this.responseText);
-			string = "";
+			var string = "";
 			for(var i = 0; i<data.hits.length; i++) {
 			var content = data.hits[i];
 			string += "<div class='col-md-3 col-sm-6 grid-item'>";
@@ -197,12 +197,11 @@ document.getElementById('searchVid').addEventListener("keyup", function(event) {
 function searchV() {
 	var url = "https://pixabay.com/api/videos/?key=7964595-ef854d08be69ff790495f4514&page="+ pageV +"&video_type="+ videoType +"&category="+ categoryV +"&order="+  orderV +"&per_page="+ resV +"&q=";
 	var inputSearch = document.getElementById('searchVid').value;
-	var request = new XMLHttpRequest();
 	request.open('GET', url + inputSearch, true);
 	request.onload = function(){
 		if(this.status === 200){
 			var data = JSON.parse(this.responseText);
-			string = "";
+			var string = "";
 			for(var i = 0; i<data.hits.length; i++) {
 			var content = data.hits[i];
 			var sizep = "200x150";
@@ -265,3 +264,56 @@ function prevV(){
 	pageV = pageV-1;
 	searchV();
 }
+
+window.onload = function() {
+	videosBg();
+	photosBg();
+}
+function videosBg() {
+	var url = "https://pixabay.com/api/?key=7964595-ef854d08be69ff790495f4514&per_page=4&category=nature&orientation=horizontal&image_type=photo&q=mountain";
+	var request1 = new XMLHttpRequest;
+	request1.open("get", url, true);
+	request1.onload = function(){
+		if(this.status === 200){
+			var data = JSON.parse(this.responseText);
+			console.log(data);
+			var string = "";
+			for(var i = 0; i<data.hits.length; i++) {
+			var content = data.hits[i];
+			string += "<div class='bg-"+ [i] +" vidBg'>";
+			string += "<img src='"+ content.webformatURL +"'>";
+			string += "</div>";
+			document.getElementById('bg-video').innerHTML = string;
+			}
+		}
+	}
+	request1.send();
+}
+
+function photosBg() {
+	var url = "https://pixabay.com/api/?key=7964595-ef854d08be69ff790495f4514&per_page=12&category=backgrounds&orientation=horizontal&image_type=photo&q=";
+	request.open("get", url, true);
+	request.onload = function(){
+		if(this.status === 200){
+			var data = JSON.parse(this.responseText);
+			var string = "";
+			string += "<div class='slider-top'>";
+			string += "<div class='slika'>";
+			for(var i = 0; i<data.hits.length; i++) {
+			var content = data.hits[i];
+			string += "<div class='slike sl"+ [i] +"'>";
+			string += "<img src='"+ content.webformatURL +"'>";
+			string += "</div>";
+			if ((i+1) % 4 == 0) {
+				string += "</div>";
+				string += "</div>";
+				string += "<div class='slider-top'>";
+				string += "<div class='slika'>";
+			}
+			document.getElementById('upper-slider').innerHTML = string;
+			}
+		}
+	}
+	request.send();
+}
+
