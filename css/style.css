@@ -89,62 +89,62 @@ img {
 }
 
 .sm1 {
-	background-image: url("https://pixabay.com/get/eb35b90c2cfd033ed1584d05fb1d419fe573e7dc1cac104497f1c17aa1eeb0bf_640.jpg");
+	background-image: url("../img/slider11.jpg");
 	animation: fading1 30s infinite;
 }
 
 .sm2 {
-	background-image: url("https://pixabay.com/get/ea37b30f2ff4033ed1584d05fb1d419fe573e7dc1cac104497f1c17aa1ebb2bb_640.jpg");
+	background-image: url("../img/slider12.jpg");
 	animation: fading2 30s infinite;
 }
 
 .sm3 {
-	background-image: url("https://pixabay.com/get/ea37b30d2af2063ed1584d05fb1d419fe573e7dc1cac104497f1c17aa1eab4b0_640.jpg");
+	background-image: url("../img/slider13.jpg");
 	animation: fading3 30s infinite;
 }
 
 .sm4 {
-	background-image: url("https://pixabay.com/get/ea37b0062af2053ed1584d05fb1d419fe573e7dc1cac104497f1c17aa1eab4b0_640.jpg");
+	background-image: url("../img/slider14.jpg");
 	animation: fading4 30s infinite;
 }
 
 .sl1 {
-	background-image: url("https://pixabay.com/get/ea37b30d28fc003ed1584d05fb1d419fe573e7dc1cac104497f1c17aa1eab4b0_640.jpg");
+	background-image: url("../img/slider21.jpg");
 	animation: fading1 30s infinite reverse;
 }
 
 .sl2 {
-	background-image: url("https://pixabay.com/get/ea37b00621f5063ed1584d05fb1d419fe573e7dc1cac104497f1c17aa1e5b5bf_640.jpg");
+	background-image: url("../img/slider22.jpg");
 	animation: fading2 30s infinite reverse;
 }
 
 .sl3 {
-	background-image: url("https://pixabay.com/get/ea37b30c28fd063ed1584d05fb1d419fe573e7dc1cac104497f1c17aa1e5b5bf_640.jpg");
+	background-image: url("../img/slider23.jpg");
 	animation: fading3 30s infinite reverse;
 }
 
 .sl4 {
-	background-image: url("https://pixabay.com/get/ea34b80a2ef7063ed1584d05fb1d419fe573e7dc1cac104497f1c17aa1e5b5bf_640.jpg");
+	background-image: url("../img/slider24.jpg");
 	animation: fading4 30s infinite reverse;
 }
 
 .sr1 {
-	background-image: url("https://pixabay.com/get/ea37b30c2ef0073ed1584d05fb1d419fe573e7dc1cac104497f1c17aa1e4b5b9_640.jpg");
+	background-image: url("../img/slider31.jpg");
 	animation: fading1 40s infinite reverse;
 }
 
 .sr2 {
-	background-image: url("https://pixabay.com/get/ea37b1062af1013ed1584d05fb1d419fe573e7dc1cac104497f1c17aa1e4b5b9_640.jpg");
+	background-image: url("../img/slider32.jpg");
 	animation: fading2 40s infinite reverse;
 }
 
 .sr3 {
-	background-image: url("https://pixabay.com/get/ea37b00621f5053ed1584d05fb1d419fe573e7dc1cac104497f1c17aa1e4b5b9_640.jpg");
+	background-image: url("../img/slider33.jpg");
 	animation: fading3 40s infinite reverse;
 }
 
 .sr4 {
-	background-image: url("https://pixabay.com/get/ea37b0062ff0083ed1584d05fb1d419fe573e7dc1cac104497f1c17aa1e4b5b9_640.jpg");
+	background-image: url("../img/slider34.jpg");
 	animation: fading4 40s infinite reverse;
 }
 
@@ -171,22 +171,22 @@ img {
 }
 
 .bg-1 {
-	background-image: url("https://pixabay.com/get/ea37b30d28fc003ed1584d05fb1d419fe573e7dc1cac104497f0c871a1eab3ba_640.jpg");
+	background-image: url("../img/slider41.jpg");
 	animation: fading1 30s infinite;
 }
 
 .bg-2 {
-	background-image: url("https://pixabay.com/get/ea34b4092ff3003ed1584d05fb1d419fe573e7dc1cac104497f0c871a1e5b0bd_640.jpg");
+	background-image: url("../img/slider42.jpg");
 	animation: fading2 30s infinite;
 }
 
 .bg-3 {
-	background-image: url("https://pixabay.com/get/ec31b10e2af61c22d2524518b74b4f90e772ebd004b0144395f9c97faeebb6_640.jpg");
+	background-image: url("../img/slider43.jpg");
 	animation: fading3 30s infinite;
 }
 
 .bg-4 {
-	background-image: url("https://pixabay.com/get/ea35b20e2ff4053ed1584d05fb1d419fe573e7dc1cac104497f0c871a0edb7be_640.jpg");
+	background-image: url("../img/slider44.jpg");
 	animation: fading4 30s infinite;
 }
 
