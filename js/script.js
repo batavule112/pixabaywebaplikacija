@@ -148,10 +148,12 @@ $('.vas').click(function(){
 var box = document.getElementsByClassName('b-outer');
 for ( var b = 0; b < box.length; b++ ) {
 	box[b].addEventListener("mouseover", function() {
+		this.children[1].classList.add('half-fade');
 		this.previousElementSibling.children[0].classList.add('fadeIn');
 	});
 	
 	box[b].addEventListener("mouseout", function() {
+		this.children[1].classList.remove('half-fade');
 		this.previousElementSibling.children[0].classList.remove('fadeIn');
 	});
 }
@@ -285,7 +287,6 @@ function videosBg() {
 	request1.onload = function(){
 		if(this.status === 200){
 			var data = JSON.parse(this.responseText);
-			console.log(data);
 			var string = "";
 			for(var i = 0; i<data.hits.length; i++) {
 			var content = data.hits[i];
