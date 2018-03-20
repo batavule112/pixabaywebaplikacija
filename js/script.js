@@ -11,6 +11,7 @@ var order = "popular";
 var orderV = "popular";
 var grid = $('.grid');
 var gridv = $('.gridv');
+var numOfPagesInputDelay = null;
 var request = new XMLHttpRequest();
 var paginationp = document.getElementsByClassName('pagip');
 for ( var p = 0; p < paginationp.length; p++) {
@@ -92,7 +93,6 @@ function search() {
 	request.send();
 	document.getElementsByClassName('gfirst')[0].style.display = 'block';
 }
-var numOfPagesInputDelay = null;
 document.getElementsByClassName('nmbpg')[0].addEventListener('keyup', function(){
 	if(numOfPagesInputDelay != null) clearTimeout(numOfPagesInputDelay); 
 	page = Number(document.getElementsByClassName('nmbpg')[0].value);
@@ -187,6 +187,7 @@ document.getElementById('searchVid').addEventListener("keyup", function(event) {
 });
 function searchV() {
 	document.getElementsByClassName('gridv')[0].classList.remove('fadeIn');
+	numOfPagesInputDelay = null;
 	var url = "https://pixabay.com/api/videos/?key=7964595-ef854d08be69ff790495f4514&page="+ pageV +"&video_type="+ videoType +"&category="+ categoryV +"&order="+  orderV +"&per_page="+ resV +"&q=";
 	var inputSearch = document.getElementById('searchVid').value;
 	request.open('GET', url + inputSearch, true);
@@ -221,7 +222,8 @@ function searchV() {
 			$('.iframe').fancybox();
 			var numOfPages = Math.round(data.totalHits / resV);
 				document.getElementsByClassName('track-v')[0].innerHTML = pageV+" / "+numOfPages;
-				document.getElementsByClassName('track-v')[1].innerHTML = page+" / "+numOfPages;
+				document.getElementsByClassName('nmbvd')[0].value = null;
+				document.getElementsByClassName('nmbvd')[0].setAttribute('placeholder', pageV +" / " + numOfPages);
 				for ( var v = 0; v < paginationv.length; v++) {
 					paginationv[v].style.display = 'none';
 					if ( numOfPages > 1 ) {
@@ -246,6 +248,21 @@ function searchV() {
 		}
 	request.send();
 }
+document.getElementsByClassName('nmbvd')[0].addEventListener('keyup', function(){
+	if(numOfPagesInputDelay != null) clearTimeout(numOfPagesInputDelay); 
+	pageV = Number(document.getElementsByClassName('nmbvd')[0].value);
+	gridv.masonry('destroy');
+	numOfPagesInputDelay = setTimeout(searchV, 1000);
+	if ( pageV > 42 ) {
+		pageV = 42;
+	}
+	if ( pageV < 1 ) {
+		pageV = 1;
+	}
+	if ( isNaN(pageV) === true ) {
+		pageV = 1;
+	}
+})
 function nextV() {
 	gridv.masonry('destroy');
 	pageV = pageV+1;

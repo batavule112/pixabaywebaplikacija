@@ -54,7 +54,6 @@ img {
 
 .upper-box-inner {
 	position: absolute;
-	/*overflow-x: hidden;*/
 	width: 130%;
 	transform: skew(-15deg);
 	height: 100%;
@@ -256,7 +255,8 @@ img {
 	color: white;
 }
 
-.nmbpg {
+.nmbpg,
+.nmbvd {
 	width: 66px;
 	padding: 0 8px;
 	height: 35px;
