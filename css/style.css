@@ -272,9 +272,8 @@ img {
 .nmbvd {
 	width: 66px;
 	padding: 0 8px;
-	height: 35px;
+	height: 36px;
 	border-radius: 0;
-	/*text-align: center;*/
 }
 
 .pagination li p {
