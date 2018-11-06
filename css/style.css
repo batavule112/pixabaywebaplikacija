@@ -31,10 +31,10 @@ img {
 /* PHOTOS CSS */
 /* header */
 .photos {
-	background-image: url("../img/background.jpg");
-	background-color: black;
-	background-size: cover;
-	background-attachment: fixed;
+	/* background-image: url("../img/background.jpg"); */
+	/* background-color: black; */
+	/* background-size: cover; */
+	/* background-attachment: fixed; */
 }
 
 .jumbotron {
